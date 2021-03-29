@@ -32,5 +32,5 @@ class NeuralNet(nn.Module):
             m.weight.data.uniform_(-y, y)
             m.bias.data.fill_(0)
 
-    def forward(self, x):
+    def forward(self, x: torch.Tensor):
         return self.fc(x)
