@@ -27,4 +27,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: python -m unittest ../pytorch/test/unit.py
+        run: |
+          pip install torch
+          python -m unittest ../pytorch/test/unit.py
