@@ -20,7 +20,8 @@ class Class(unittest.TestCase):
         model = NeuralNet(100, [50, 60, 80], [torch.nn.ReLU(), torch.nn.ReLU(), torch.nn.ReLU()])
         model.eval()
         var = torch.randn(1, 100, requires_grad=False)
-        self.assertEqual(model(var).shape, (1, 80), "Should have the same output shape with (1,80), but got {} instead".format(model(var).shape))
+        self.assertEqual(model(var).shape, (1, 80),
+                         "Should have the same output shape with (1,80), but got {} instead".format(model(var).shape))
 
     def test_run_complex_neural_network(self):
         model = NeuralNet(5, [15, 20, 2],
@@ -28,7 +29,8 @@ class Class(unittest.TestCase):
                            torch.nn.Sigmoid()])
         model.eval()
         var = torch.randn(1, 5, requires_grad=False)
-        self.assertEqual(model(var).shape, (1, 2), "Should have the same output shape with (1,2), but got {} instead".format(model(var).shape))
+        self.assertEqual(model(var).shape, (1, 2),
+                         "Should have the same output shape with (1,2), but got {} instead".format(model(var).shape))
 
 
 def call_main():
